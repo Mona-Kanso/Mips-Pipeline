@@ -32,17 +32,17 @@ begin
                 s_result <= std_logic_vector(v_a or v_b);
             when "010" => -- ADD
                 s_result <= std_logic_vector(v_a + v_b);
-            when "110" => -- SUB (Importante para o BEQ)
+            when "110" => -- SUB
                 s_result <= std_logic_vector(v_a - v_b);
             when others => 
                 s_result <= (others => '0');
         end case;
     end process;
 
-    -- Atribuição contínua para a saída principal
+    -- Atribuio contnua para a sada principal
     result <= s_result;
 
-    -- Geração da flag Zero
+    -- Gerao da flag Zero
     zero <= '1' when s_result = "0000" else '0';
 
 end Combinacional;

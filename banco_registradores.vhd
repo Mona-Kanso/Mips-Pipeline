@@ -11,8 +11,8 @@ use ieee.numeric_std.all;
 entity banco_registradores is
 	generic( 
         n: integer := 32;
-        bits_enderecamento: integer := 5
-		num_registradores	:	integer := 32
+        bits_enderecamento: integer := 5;
+		  num_registradores	:	integer := 8
     );
 
 	port(
@@ -36,7 +36,7 @@ begin
     -- processo de escrita
     process(clock)
     begin
-        if rising_edge(clock) then
+        if falling_edge(clock) then
             if reg_wirte = '1' then
                 s_registradores(to_integer(unsigned(write_register(bits_enderecamento-1 downto 0)))) <= wirte_data;
             end if;

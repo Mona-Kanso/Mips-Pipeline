@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Design Name: Registrador IF/ID
--- Module Name: reg_if_id - Behavioral
--- Project Name: pipe4
--- Description: Registrador de pipeline responsável por armazenar a
--- instrução obtida pelo estágio Instruction Fetch (IF) e encaminhá-la
--- para o estágio Instruction Decode (ID).
+-- Project Name:   Mips-Pipeline; 
+-- Module Name:    reg_if_id - Behavioral;
+-- Description:   Registrador de pipeline responsvel por armazenar a
+-- instruo obtida pelo estgio Instruction Fetch (IF) e encaminh-la
+-- para o estgio Instruction Decode (ID).
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -27,11 +27,11 @@ begin
 
     process(clock, reset)
     begin
-		  -- Limpa o registrador quando há reset
+		  -- Limpa o registrador quando h reset
         if reset = '1' then
             reg_if_id <= (others => '0');
 				
-        -- Armazena a instrução recebida
+        -- Armazena a instruo recebida
         elsif rising_edge(clock) then
             reg_if_id <= if_in;
 				
@@ -41,3 +41,6 @@ begin
     id_out <= reg_if_id;
 
 end Behavioral;
+
+
+

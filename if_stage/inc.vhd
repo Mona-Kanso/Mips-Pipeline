@@ -1,9 +1,9 @@
 ----------------------------------------------------------------------------------
--- Design Name: incrementador program counter
--- Module Name: inc - Behavioral 
--- Project Name: pipe4
--- Description: Componente responsável por incrementar o valor do Program Counter (PC).
+-- Project Name:   Mips-Pipeline; 
+-- Module Name:    inc - Behavioral;
+-- Description:    Componente responsvel por incrementar o valor do Program Counter (PC).
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;

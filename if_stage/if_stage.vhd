@@ -1,9 +1,9 @@
----------------------------------------------------------------------------------- 
--- Design Name: Instruction Fetch Stage
--- Module Name: if_stage - Structural 
--- Project Name: pipe4
--- Description: Componente responsável por integrar os módulos do estágio Instruction Fetch (IF).
 ----------------------------------------------------------------------------------
+-- Project Name:   Mips-Pipeline; 
+-- Module Name:    if_stage - Structural;
+-- Description:    Componente responsvel por integrar os mdulos do estgio Instruction Fetch (IF).
+----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -15,8 +15,8 @@ entity if_stage is
     Port (
         clock     : in  STD_LOGIC;
         reset     : in  STD_LOGIC;
-        instr_out : out STD_LOGIC_VECTOR(m-1 downto 0); -- saída do reg_if_id para o próximo estágio (ID)
-        pc_out    : out STD_LOGIC_VECTOR(n-1 downto 0) -- saída para depuração do código
+        instr_out : out STD_LOGIC_VECTOR(m-1 downto 0); -- sada do reg_if_id para o prximo estgio (ID)
+        pc_out    : out STD_LOGIC_VECTOR(n-1 downto 0) -- sada para depurao do cdigo
     );
 end if_stage;
 
@@ -44,7 +44,7 @@ begin
             inc_out => pc_prox
         );
 
-    -- Memória de Instruções (ROM)
+    -- Memria de Instrues (ROM)
     ROM_inst : entity work.rom
         port map (
             rom_in  => pc_atual,
@@ -57,9 +57,9 @@ begin
             clock  => clock,
             reset  => reset,
             if_in  => instrucao,
-            id_out => instr_out -- Saída para ID
+            id_out => instr_out -- Saida para ID
         );
 
-    pc_out <= pc_atual; -- Saída de depuração
+    pc_out <= pc_atual; -- saida de depuracao
 
 end Structural;

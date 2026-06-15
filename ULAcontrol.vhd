@@ -18,18 +18,14 @@ begin
     process(alu_op, funct)
     begin
         case alu_op is
-            when "00" => -- LW / SW (Sempre precisam de Soma para calcular endereço)
+            when "00" => -- LW / SW (Sempre precisam de Soma para calcular endereo)
                 alu_ctrl <= "010"; 
                 
-            when "01" => -- BEQ (Sempre precisa de Subtração para ver se são iguais)
-                alu_ctrl <= "110";
-                
-            when "10" => -- Tipo R (A operação depende do campo funct)
+            when "10" => -- Tipo R (A operao depende do campo funct)
                 case funct is
-                    when "100000" => alu_ctrl <= "010"; -- ADD
-                    when "100010" => alu_ctrl <= "110"; -- SUB
-                    when "100100" => alu_ctrl <= "000"; -- AND
-                    when "100101" => alu_ctrl <= "001"; -- OR
+                    when "0001" => alu_ctrl <= "010"; -- ADD
+                    when "0010" => alu_ctrl <= "110"; -- SUB
+                    when "0011" => alu_ctrl <= "000"; -- AND
                     when others   => alu_ctrl <= "000"; -- Default
                 end case;
                 

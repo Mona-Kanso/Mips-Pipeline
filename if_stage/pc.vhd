@@ -1,10 +1,10 @@
 ----------------------------------------------------------------------------------
--- Design Name: Program Counter (PC)
--- Module Name: pc - Behavioral
--- Project Name: pipe4
--- Description: Registrador responsável por armazenar o endereço da
--- instrução atual e disponibilizá-lo para acesso à memória de instruções.
+-- Project Name:   Mips-Pipeline; 
+-- Module Name:    pc - Behavioral;
+-- Description:    Registrador responsvel por armazenar o endereo da
+-- instruo atual e disponibiliz-lo para acesso  memria de instrues.
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
