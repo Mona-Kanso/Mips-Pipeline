@@ -1,0 +1,28 @@
+NET "clock" LOC = "V10" | IOSTANDARD = "LVCMOS33";
+NET "clock" TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100000 kHz;
+
+NET "reset" LOC = "B8" | IOSTANDARD = "LVCMOS33";
+
+NET "segmento<0>" LOC = "T17" | IOSTANDARD = "LVCMOS33";
+NET "segmento<1>" LOC = "T18" | IOSTANDARD = "LVCMOS33";
+NET "segmento<2>" LOC = "U17" | IOSTANDARD = "LVCMOS33";
+NET "segmento<3>" LOC = "U18" | IOSTANDARD = "LVCMOS33";
+NET "segmento<4>" LOC = "M14" | IOSTANDARD = "LVCMOS33";
+NET "segmento<5>" LOC = "N14" | IOSTANDARD = "LVCMOS33";
+NET "segmento<6>" LOC = "L14" | IOSTANDARD = "LVCMOS33";
+NET "segmento<7>" LOC = "M13" | IOSTANDARD = "LVCMOS33";
+
+NET "digito<0>" LOC = "N16" | IOSTANDARD = "LVCMOS33";
+NET "digito<1>" LOC = "N15" | IOSTANDARD = "LVCMOS33";
+NET "digito<2>" LOC = "P18" | IOSTANDARD = "LVCMOS33";
+NET "digito<3>" LOC = "P17" | IOSTANDARD = "LVCMOS33";
+
+NET "led<0>" LOC = "U16" | IOSTANDARD = "LVCMOS33";
+NET "led<1>" LOC = "V16" | IOSTANDARD = "LVCMOS33";
+NET "led<2>" LOC = "U15" | IOSTANDARD = "LVCMOS33";
+NET "led<3>" LOC = "V15" | IOSTANDARD = "LVCMOS33";
+NET "led<4>" LOC = "M11" | IOSTANDARD = "LVCMOS33";
+NET "led<5>" LOC = "N11" | IOSTANDARD = "LVCMOS33";
+NET "led<6>" LOC = "R11" | IOSTANDARD = "LVCMOS33";
+NET "led<7>" LOC = "T11" | IOSTANDARD = "LVCMOS33";

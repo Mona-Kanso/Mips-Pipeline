@@ -1,28 +1,28 @@
 ----------------------------------------------------------------------------------
 -- Project Name:   Mips-Pipeline; 
 -- Module Name:    mux - Behavioral;
--- Description:    MUX entre a e b;
+-- Description:    MUX de 4 bits entre a e b;
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity mux is
+entity mux_4b is
 
 	generic (
-		n: integer := 32
+		n: integer := 4
 	);
     port (
 
 			a:	in	std_logic_vector(n-1 downto 0);
 			b:	in std_logic_vector(n-1 downto 0);  	 
 			enable:	in    std_logic;
-           data_out: out  std_logic_vector(n-1 downto 0)			  
+         data_out: out  std_logic_vector(n-1 downto 0)			  
 	);
 
 		
-end mux;
+end mux_4b;
 
-architecture Behavioral of mux is
+architecture Behavioral of mux_4b is
 
 begin
 	process(a, b, enable)

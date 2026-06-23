@@ -1,10 +1,15 @@
+----------------------------------------------------------------------------------
+-- Project Name:   Mips-Pipeline; 
+-- Module Name:    unidade_controle - Behavioral;
+-- Description:    Unidade de controle do processador.
+----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity unidade_controle is
     port(
-        opcode      : in  std_logic_vector(2 downto 0); -- Bits [11:9] da instrução
-        
+        opcode      : in  std_logic_vector(2 downto 0); -- Bits [11:9] da instruo
         reg_dst     : out std_logic;
         alu_src     : out std_logic;
         mem_to_reg  : out std_logic;
@@ -19,7 +24,7 @@ architecture Behavioral of unidade_controle is
 begin
     process(opcode)
     begin
-        -- Inicialização para evitar Latch
+        -- Inicializao para evitar Latch
         reg_dst    <= '0';
         alu_src    <= '0';
         mem_to_reg <= '0';
@@ -32,36 +37,36 @@ begin
             when "001" => -- ADD (Tipo R)
                 reg_dst   <= '1';
                 reg_write <= '1';
-                alu_ctrl  <= "010"; -- Código ADD da ULA
+                alu_ctrl  <= "010"; -- Cdigo ADD da ULA
                 
             when "010" => -- SUB (Tipo R)
                 reg_dst   <= '1';
                 reg_write <= '1';
-                alu_ctrl  <= "110"; -- Código SUB da ULA
+                alu_ctrl  <= "110"; -- Cdigo SUB da ULA
                 
-            when "011" => -- OR (Tipo R - Reutilizando o slot do AND do Green Card)
+            when "011" => -- AND (Tipo R - Reutilizando o slot do AND do Green Card)
                 reg_dst   <= '1';
                 reg_write <= '1';
-                alu_ctrl  <= "001"; -- Código OR da ULA
+                alu_ctrl  <= "011";
                 
             when "100" => -- LOAD (Tipo I)
                 alu_src    <= '1';
                 mem_to_reg <= '1';
                 reg_write  <= '1';
                 mem_read   <= '1';
-                alu_ctrl   <= "010"; -- Soma para o endereço
+                alu_ctrl   <= "010"; -- Soma para o endereo
                 
             when "101" => -- STORE (Tipo I)
                 alu_src   <= '1';
                 mem_write <= '1';
-                alu_ctrl  <= "010"; -- Soma para o endereço
+                alu_ctrl  <= "010"; -- Soma para o endereo
                 
             when "110" => -- ADDI (Tipo I)
                 alu_src   <= '1';
                 reg_write <= '1';
-                alu_ctrl  <= "010"; -- Código ADD
+                alu_ctrl  <= "010"; -- Cdigo ADD
                 
-            when others => -- NOP (000) ou códigos não mapeados
+            when others => -- NOP (000) ou cdigos no mapeados
                 null;
         end case;
     end process;

@@ -18,8 +18,6 @@ architecture Behavioral of memoria_dados is
     type t_memoria is array (0 to 15) of std_logic_vector(3 downto 0);
 
     signal memoria : t_memoria := (
-        0 => "0011", -- valor 3
-        1 => "0010", -- valor 2
         others => (others => '0')
     );
 

@@ -26,12 +26,10 @@ begin
         v_b := unsigned(b);
         
         case alu_control is
-            when "000" => -- AND
-                s_result <= std_logic_vector(v_a and v_b);
-            when "001" => -- OR
-                s_result <= std_logic_vector(v_a or v_b);
             when "010" => -- ADD
                 s_result <= std_logic_vector(v_a + v_b);
+	    when "011" => -- AND
+                s_result <= std_logic_vector(v_a and v_b);
             when "110" => -- SUB
                 s_result <= std_logic_vector(v_a - v_b);
             when others => 
