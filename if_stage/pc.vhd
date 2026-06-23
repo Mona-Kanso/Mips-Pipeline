@@ -1,8 +1,7 @@
 ----------------------------------------------------------------------------------
 -- Project Name:   Mips-Pipeline; 
 -- Module Name:    pc - Behavioral;
--- Description:    Registrador responsvel por armazenar o endereo da
--- instruo atual e disponibiliz-lo para acesso  memria de instrues.
+-- Description:    Registrador responsavel por apontar para a instrucao a ser realizada.
 ----------------------------------------------------------------------------------
 
 library IEEE;
@@ -10,18 +9,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity pc is
 	generic ( 
-			n: integer := 4
+			pc_b: integer := 4
 			);
-    Port ( pc_in : in std_logic_vector(n-1 downto 0); 
+    Port ( pc_in : in std_logic_vector(pc_b-1 downto 0); 
            clock : in  STD_LOGIC;
            reset : in  STD_LOGIC;
-           pc_out : out  std_logic_vector(n-1 downto 0)
+           pc_out : out  std_logic_vector(pc_b-1 downto 0)
 			 );
 end pc;
 
 architecture Behavioral of pc is
 
-	signal reg_pc : std_logic_vector(n-1 downto 0) := (others => '0');
+	signal reg_pc : std_logic_vector(pc_b-1 downto 0) := (others => '0');
 	
 begin
 process(clock, reset)

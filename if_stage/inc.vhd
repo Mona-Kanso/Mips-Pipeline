@@ -1,7 +1,7 @@
 ----------------------------------------------------------------------------------
 -- Project Name:   Mips-Pipeline; 
 -- Module Name:    inc - Behavioral;
--- Description:    Componente responsvel por incrementar o valor do Program Counter (PC).
+-- Description:    Componente responsavel por incrementar o valor do Program Counter (PC).
 ----------------------------------------------------------------------------------
 
 library IEEE;
@@ -10,10 +10,10 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity inc is
     generic (
-				n: integer := 4
+				inc_b: integer := 4
 				);
-    Port ( inc_in : in  std_logic_vector(n-1 downto 0);
-           inc_out : out std_logic_vector(n-1 downto 0)
+    Port ( inc_in : in  std_logic_vector(inc_b-1 downto 0);
+           inc_out : out std_logic_vector(inc_b-1 downto 0)
 			  );
 end inc;
 
